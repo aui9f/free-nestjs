@@ -1,5 +1,4 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { NotFoundError } from 'rxjs';
 import { Movie } from 'src/entities/movie.entity';
 import { UpdateMovie } from './dto/update-movie.dto';
 

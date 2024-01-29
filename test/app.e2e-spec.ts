@@ -15,10 +15,35 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/')
+  
+  describe('APP -- GET TEST', ()=>{
+    it('/ (GET)', () => {
+      return request(app.getHttpServer())
+        .get('/')
+        .expect(200)
+        .expect('Hello World!');
+    });
+  })
+  
+  describe('Movie Test', ()=>{
+    it('/movies', ()=>{
+      return request(app.getHttpServer()).get('/movies')
       .expect(200)
-      .expect('Hello World!');
-  });
+      .expect([]);
+      //app.getHttpServer() -- http://localhost:3000 같은걸 안쓰기 위해서 사용
+    })
+
+    it('POST', ()=>{
+      return request(app.getHttpServer())
+        .post('/movies')
+        .send({
+          title: 'e2e test',
+          year: 2024,
+          genres: ['test']
+        })
+        .expect(201)
+    })
+  })
+
+  
 });
