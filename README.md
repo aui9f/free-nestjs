@@ -1,3 +1,31 @@
+# STUDY
+
+💻 노마드코더 인강
+
+✍️ 노션 강의 정리
+
+🔗 결과 URL
+
+
+### 🖥 배우면서 구현
+![NestJS](https://img.shields.io/badge/nestjs-fb99b7?style=for-the-badge&logo=nestjs&logoColor=f4004a) ![ts](https://img.shields.io/badge/typescript-eeeeee?style=for-the-badge&logo=typescript&logoColor=blue) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+
+---
+
+## **#0 INTRODUCTION**
+
+설치: node.js, VSCode, insomnia
+
+프로젝트 생성
+
+```bash
+$ npm i -g @nestjs/cli
+$ nest new (project-name)
+$ npm run start:dev # watch mode
+```
+
+=======
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
