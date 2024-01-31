@@ -24,7 +24,17 @@ $ nest new (project-name)
 $ npm run start:dev # watch mode
 ```
 
-=======
+**데코레이터(@~~):** 클래스에 함수 기능을 추가 ex — `@Module` (데코레이터모듈)
+
+**컨트롤러:** 기본적으로 URL을 가져오고 함수를 실행 *(express의 라우터 같은 존재)*
+
+**서비스:** 비지니스직
+
+- ***EX) Hello World를 출력한 파일 추적하기***
+    1. **app.module.ts ⇒** controllers: [AppController]
+    2. **app.controller.ts ⇒** getHello(): string { return this.appService.getHello(); }
+    3. **app.service.ts ⇒** getHello(): string { return 'Hello World!'; }
+
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
