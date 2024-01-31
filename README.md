@@ -24,7 +24,10 @@ $ nest new (project-name)
 $ npm run start:dev # watch mode
 ```
 
+## ** #1 ARCHITECTURE OF NESTJ S**
 **데코레이터(@~~):** 클래스에 함수 기능을 추가 ex — `@Module` (데코레이터모듈)
+
+**모듈** 하나의 모듈은 하나의 controllers, providers
 
 **컨트롤러:** 기본적으로 URL을 가져오고 함수를 실행 *(express의 라우터 같은 존재)*
 
@@ -34,6 +37,52 @@ $ npm run start:dev # watch mode
     1. **app.module.ts ⇒** controllers: [AppController]
     2. **app.controller.ts ⇒** getHello(): string { return this.appService.getHello(); }
     3. **app.service.ts ⇒** getHello(): string { return 'Hello World!'; }
+
+
+## ** #2 REST API **
+
+🖍 설치 → 자동으로 셋팅까지 해줌
+```bash
+$ nest ## 조회하면 사용할수 있는 키워드가 나온다.
+$ jest g mo ## movies (모듈이름)
+$ nest g co ## g (generate) , co (controller)
+$ nest g s ## g (generate) , s (service)
+```
+
+__에러발생시키기__ throw new NotFoundException()
+
+__entities__ 
+데이터베이스의 모델을 만들어야함
+```ts
+export class Movie{
+    id: number
+    title: string
+    year: number
+    genres: string[]
+}
+```
+
+
+__DTO__ (Data Transfer Object, 데이터 전송 객체) 
+사용자가 보낼수 있는 데이터를 작성
+```ts
+import { IsNumber, IsOptional, IsString } from "class-validator"
+export class CreateMovie {
+    @IsString()
+    readonly title: string
+    @IsNumber()
+    readonly year: number
+    @IsString({each: true}) //j 옵션에서 each: true 이면, 요소 하나씩 검사한다는 뜻
+    @IsOptional()
+    readonly genres: string[]
+}
+```
+
+웹 애플리케이션으로 전송되는 데이터의 검증
+```bash
+npm i --save class-validator class-transformer
+```
+
 
 
 <p align="center">
