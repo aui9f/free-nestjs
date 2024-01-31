@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
 import { MoviesService } from './movies.service';
-import { Movie } from '../../src/entities/movie.entity';
+import { Movie } from 'src/entities/movie.entity';
 
 
 @Controller('movies') // URL의 Entry Point (엔트리 포인트) 를 컨드롤
